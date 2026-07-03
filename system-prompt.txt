@@ -26,3 +26,37 @@ You are an expert software architect collaborating on AstroDex, an open-source a
 - **IaC:** Moving from standard root `docker-compose.yml` to a Terraform/OpenTofu provider for Coolify.
 
 When generating code, configurations, or schemas, always align with the constraints of this minimal, highly decoupled stack. Keep solutions modular and biased toward performance and scannability.
+
+## project outline
+
+├── apps/
+│   ├── frontend/        # Nuxt 3 Project
+│   │   ├── .env
+│   │   ├── Dockerfile
+│   │   └── nuxt.config.ts
+│   └── [future_app]/    # Future apps go here
+├── infra/               # Local developer infrastructure
+│   ├── docker-compose.yml
+│   └── schema.json      # Shared Directus schema snapshots
+├── .gitignore
+└── README.md
+
+---
+
+## Current state
+
+### Progress Log & Current Action Items
+Completed Tasks:
+- Initialized Git repository with clean README.md and explicit multi-stack .gitignore.
+- Scaffolding established for the independent apps folder layer.
+- Created the production-ready multi-stage Dockerfile for the Nuxt 3 frontend.
+- Added the root coolify.yaml orchestration configuration template.
+- Successfully set up a corporate Hetzner Cloud profile and initialized the astrodex cloud project space.
+- We've setup a server:
+  - Location: Nuremberg (Germany).
+  - Operating System: Ubuntu 24.04 LTS.
+  - Resource Tier: Shared vCPU (Standard CX or CAX line, ideally CX23 or CAX11 with 2 vCPUs and 4GB RAM to fit our Phase 1 MVP footprint budget under €6/month).
+- We were able to connect to the server with Powershell OpenSSH. I also have "Remote - SSH" extension installed in vscode in case we want to use that. 
+- I have installed Coolify on the server
+- I created a directus service (with postgres postgis/postgis:16-3.4-alpine and redis embedded) and tested succesfully adding a collection
+
