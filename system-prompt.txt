@@ -59,4 +59,5 @@ Completed Tasks:
 - We were able to connect to the server with Powershell OpenSSH. I also have "Remote - SSH" extension installed in vscode in case we want to use that. 
 - I have installed Coolify on the server
 - I created a directus service (with postgres postgis/postgis:16-3.4-alpine and redis embedded) and tested succesfully adding a collection
-
+- We have deployed the Nuxt container to coolify by pointing to our Github repository master branch, we plan to connect to Directus via the environment variable NUXT_PUBLIC_DIRECTUS_URL
+- We added a docker-compose.yml to the infra folder for spinning up postres with directus locally
