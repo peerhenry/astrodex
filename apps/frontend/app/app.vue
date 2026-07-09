@@ -15,7 +15,6 @@ const { data: serverInfo, error } = await useFetch('/api/system-status')
     <div v-else-if="serverInfo" style="background: #eef9f2; color: #1e6636; padding: 1rem;">
       <h3>⚡ Connected via Secure Server Bridge!</h3>
       <p><strong>Version:</strong> {{ (serverInfo as any).version }}</p>
-      <p><strong>Database:</strong> {{ (serverInfo as any).database }}</p>
       <p><strong>Websocket Enabled:</strong> {{ (serverInfo as any).websocket ? 'Yes' : 'No' }}</p>
     </div>
   </div>

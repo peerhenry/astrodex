@@ -60,5 +60,10 @@ Completed Tasks:
 - I have installed Coolify on the server
 - I created a directus service (with postgres postgis/postgis:16-3.4-alpine and redis embedded) and tested succesfully adding a collection
 - We have deployed the Nuxt container to coolify by pointing to our Github repository master branch, we plan to connect to Directus via the environment variable NUXT_PUBLIC_DIRECTUS_URL
-- We added a docker-compose.yml to the infra folder for spinning up postres with directus locally
+- We added a docker-compose.yml to the infra folder for spinning up postres with directus locally (different from the previously created Directus service on coolify)
 - We added a proxy to Directus API, so only serverside knows the Directus API key. It calls `/server/info` for our `app.vue` page which only indicates if connection to Directus was succesful.
+
+
+We are currently redeploying in order to circumvent networking issues on Coolify. We have deleted the resources, and are now seeking to bring everything together in a single docker-compose.yml in the root the project containing both directus and nuxt (referencing our Dockerfile).
+Locally we then run `docker compose up -d database directus` to exclude the nuxt service.
+Now we just need to deploy it to our live Coolify environment, for which we first need to configure proper env variables.
